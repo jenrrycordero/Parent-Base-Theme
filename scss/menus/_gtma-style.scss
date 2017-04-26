@@ -1,0 +1,289 @@
+//Fallback Compatibility
+.no-flexbox {
+  #site-navigation-main-wrapper {
+    #site-navigation-main {
+      li {
+        display: inline-block;
+        width:   16%;
+
+        @include breakpoint($tablet_down) {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//Normal styling
+header#masthead {
+  position:    fixed;
+  left:        0;
+  right:       0;
+  padding-top: 1.5em;
+  z-index: 10;
+}
+
+.site-header-top-bar {
+  position: relative;
+  z-index:  1;
+
+  #site-navigation-menu-toggle {
+    cursor:         pointer;
+    position:       relative;
+    display:        inline-block;
+    padding:        0px 10px;
+    vertical-align: top;
+    margin-top:     -3px;
+    margin-right:   10px;
+    min-width: 70px;
+
+    .icon-bar {
+      background-color: $color4th;
+      width:            30px;
+      height:           2px;
+      position:         relative;
+      display:          block;
+
+      &.icon-bar-middle {
+        margin: 10px 0;
+      }
+    }
+
+  }
+  .site-branding {
+    display:   inline-block;
+    max-width: 130px;
+  }
+
+  @include breakpoint($phone_down) {
+    .site-branding {
+      max-width: 80px;
+    }
+
+    #site-navigation-menu-toggle {
+      min-width: 40px;
+      margin-top: -10px;
+      svg {
+        width: 40px;
+      }
+    }
+  }
+
+}
+
+#site-navigation-main-wrapper {
+  position:            absolute;
+  left:                0;
+  right:               0;
+  top:                 0;
+  padding-top:         5em;
+  background:          $color5th;
+  transform:           translateY(-100%);
+  transition-property: transform;
+  transition-duration: .4s;
+
+  #site-navigation-menu-wrapper {
+    margin-bottom: 2em;
+  }
+
+  #site-navigation-main {
+    display:         flex;
+    justify-content: space-around;
+
+    .menu-item-wrapper {
+      position:            relative;
+      opacity:             0;
+      transform:           translateY(-20px);
+      width:               100%;
+      transition-property: all;
+      transition-duration: .2s;
+      transition-delay:    0s;
+      box-shadow:          3px 0 2px -4px $color4th;
+
+      &.menu-item-last {
+        box-shadow: none;
+      }
+
+      .icon-wrapper {
+        vertical-align:      middle;
+        position:            relative;
+        margin-bottom:       10px;
+        height:              110px;
+        transition-property: height;
+        transition-duration: .15s;
+
+        img {
+          position:   relative;
+          transform:  translateY(-50%);
+          top:        50%;
+          left:       0;
+          max-height: 60px;
+          max-width:  80px;
+          margin:     0 auto;
+        }
+
+        @include breakpoint($tablet_down) {
+          height: 80px;
+          img {
+            width:      auto;
+            max-height: 54px;
+            max-width:  63px;
+          }
+        }
+
+      }
+      .menu-title {
+        text-align:     center;
+        padding:        0.6em;
+        text-transform: uppercase;
+        color:          $color4th;
+        font-family:    sans-serif;
+      }
+    }
+
+    @include breakpoint($phone_down) {
+      display: block;
+
+      .menu-item-wrapper {
+        display:       block;
+        margin-bottom: 10px;
+        box-shadow:    none;
+
+        .icon-wrapper {
+          display: none;
+        }
+      }
+    }
+  }
+
+  ul.header-social-list-wrapper {
+    background: darken($color5th, 6%);
+    padding: 0.2em 0;
+    font-size: 24px;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      opacity: 0;
+
+      a {
+        display: block;
+        padding: 0.57em;
+        margin: 0 0.5em;
+        color: white;
+      }
+
+      @include breakpoint($phone_down) {
+        a {
+          padding: 0.6em 0.5em;
+          margin: 0 0.2em;
+        }
+
+        font-size: 25px;
+      }
+      @include breakpoint($phone_extra_small_down) {
+        a {
+          padding: 0.6em 0.1em;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @include breakpoint($phone_down) {
+    padding-top:         6em;
+  }
+}
+
+.logo-menu-closed, .logo-menu-open {
+  transition-property: opacity;
+  transition-duration: .15s;
+  transition-delay:    0.05s;
+}
+
+.logo-menu-closed {
+  opacity:    1;
+  visibility: visible;
+}
+
+.logo-menu-open {
+  visibility: hidden;
+  opacity:    0;
+  position:   absolute;
+}
+
+.menu-open {
+  .logo-menu-open {
+    opacity:    1;
+    visibility: visible;
+    position:   static;
+  }
+  .logo-menu-closed {
+    visibility: hidden;
+    opacity:    0;
+    position:   absolute;
+  }
+
+  .icon-bar {
+    &.icon-bar-middle {
+      opacity:    0;
+      visibility: visible;
+    }
+    &.icon-bar-first {
+      transform:        rotate(-45deg);
+      transform-origin: 100% 0;
+    }
+    &.icon-bar-last {
+      transform:        rotate(45deg);
+      transform-origin: 100% 0;
+    }
+  }
+
+  path:nth-child(1),
+  path:nth-child(3) {
+    stroke: $color4th
+  }
+
+  #site-navigation-main-wrapper {
+    transform: translateY(0%);
+
+    #site-navigation-main {
+      .menu-item-wrapper {
+        opacity:             1;
+        transform:           translateY(0px);
+        transition-duration: .3s;
+
+        &:nth-child(1) { transition-delay: .20s }
+        &:nth-child(2) { transition-delay: .25s }
+        &:nth-child(3) { transition-delay: .30s }
+        &:nth-child(4) { transition-delay: .35s }
+        &:nth-child(5) { transition-delay: .40s }
+        &:nth-child(6) { transition-delay: .45s }
+        &:nth-child(7) { transition-delay: .50s }
+      }
+    }
+
+    ul.header-social-list-wrapper {
+      li {
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 0.2s;
+
+        &:nth-child(1) { transition-delay: .30s }
+        &:nth-child(2) { transition-delay: .32s }
+        &:nth-child(3) { transition-delay: .34s }
+        &:nth-child(4) { transition-delay: .36s }
+        &:nth-child(5) { transition-delay: .38s }
+        &:nth-child(6) { transition-delay: .40s }
+        &:nth-child(7) { transition-delay: .42s }
+        &:nth-child(8) { transition-delay: .44s }
+        &:nth-child(9) { transition-delay: .46s }
+        &:nth-child(10) { transition-delay: .48s }
+
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,43 @@
+//Basic stuff.
+@import "compass/reset";
+
+//Automated scss from the options page.
+@import "../../../../wp-content/uploads/generated_scss/options_var-theme-general-settings";
+
+
+// ----------------        Specific files.
+@import "vars";
+@import "breakpoint";
+@import "mixins";
+@import "typografy";
+@import "general";
+@import "buttons_effects_tympanus";
+
+
+
+$btnShadow: ""; //to use on the buttons:hover event.
+
+@import "compass/css3";
+
+
+
+
+// ----------------        General Class
+
+
+
+
+// ----------------        Section
+.hero-section {
+  color: white;
+}
+
+
+
+
+
+
+
+// ----------------        Site templates. At the bottom, so they can override general classes.
+//@import "template-home";
+//@import "template-blog";

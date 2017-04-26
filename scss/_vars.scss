@@ -1,0 +1,42 @@
+
+@import "../../../../wp-content/uploads/generated_scss/options_var-theme-general-settings";
+
+// /General variables - Breakpoints.
+$phone_small: 300px;
+$phone: 480px;
+$tabletPortrait: 767px;
+$tabletLandscape: 1024px;
+$desktop: 1174px;
+$largeScreen: 1400px;
+
+
+$phone_extra_small_down  : max-width 350px;
+$phone_small_down        : max-width 480px;
+$phone_down              : max-width 767px;
+$tablet_down              : max-width 991px;
+$laptop_down              : max-width 1200px;
+$desktop_down             : max-width 1500px;
+
+$desktop_up               : 1500px;
+$laptop_up                : 1201px;
+$tablet_up                : 992px;
+$mobile_up                : 768px;
+
+
+//General variables - Colors.
+$color1st : $s_color_1;
+$color2nd : $s_color_2;
+$color3rd : $s_color_3;
+$color4th : $s_color_4;
+$color5th : $s_color_5;
+
+
+//Content dimmensions
+$contentMaxWidth : 1400px;
+$textContentMaxWidth : 800px;
+
+
+
+//Fonts sizes.
+$fontSizeTitle : 20px;  //this will be scalated up and down for the h1-h6
+$fontSizeBody : 14px;

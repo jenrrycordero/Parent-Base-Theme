@@ -1,0 +1,250 @@
+/**
+ * This file contains general css classes as well as mixins.
+ */
+
+// --------------------------     Override classes.
+.btn {
+  text-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+
+  &:hover, &:focus, &:active {
+    text-shadow: none;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+
+  &.btn-primary {
+
+  }
+  &.btn-primary {
+
+  }
+}
+
+
+
+
+// --------------------------     General classes.
+.relative { position: relative;}
+.absolute { position: absolute;}
+.fixed { position: fixed; }
+.static { position: static;}
+
+.no-padding { padding: 0px;}
+.no-margin {margin: 0px;}
+
+.padding-10 { padding: 10px}
+.padding-15 { padding: 15px}
+.padding-20 { padding: 20px}
+.padding-30 { padding: 30px}
+.padding-40 { padding: 40px}
+.padding-50 { padding: 50px}
+.padding-10-vertical { padding: 10px 0}
+.padding-15-vertical { padding: 15px 0}
+.padding-20-vertical { padding: 20px 0}
+.padding-30-vertical { padding: 30px 0}
+.padding-40-vertical { padding: 40px 0}
+.padding-50-vertical { padding: 50px 0}
+.padding-10-horizontal { padding: 0 10px}
+.padding-15-horizontal { padding: 0 15px}
+.padding-20-horizontal { padding: 0 20px}
+.padding-30-horizontal { padding: 0 30px}
+.padding-40-horizontal { padding: 0 40px}
+.padding-50-horizontal { padding: 0 50px}
+
+.h-100vw { height: 100vw;}
+.h-90vw { height: 90vw;}
+.h-80vw { height: 80vw;}
+.h-70vw { height: 70vw;}
+.h-60vw { height: 60vw;}
+.h-50vw { height: 50vw;}
+.h-40vw { height: 40vw;}
+.h-30vw { height: 30vw;}
+.h-20vw { height: 20vw;}
+.h-10vw { height: 10vw;}
+.h-5vw { height: 5vw;}
+
+.h-100vh { height: 100vh;}
+.h-90vh { height: 90vh;}
+.h-80vh { height: 80vh;}
+.h-70vh { height: 70vh;}
+.h-60vh { height: 60vh;}
+.h-50vh { height: 50vh;}
+.h-40vh { height: 40vh;}
+.h-30vh { height: 30vh;}
+.h-20vh { height: 20vh;}
+.h-10vh { height: 10vh;}
+.h-5vh { height: 5vh;}
+
+.w-100vw { width: 100vw;}
+.w-90vw { width: 90vw;}
+.w-80vw { width: 80vw;}
+.w-70vw { width: 70vw;}
+.w-60vw { width: 60vw;}
+.w-50vw { width: 50vw;}
+.w-40vw { width: 40vw;}
+.w-30vw { width: 30vw;}
+.w-20vw { width: 20vw;}
+.w-10vw { width: 10vw;}
+.w-5vw { width: 5vw;}
+
+.w-100vh { width: 100vh;}
+.w-90vh { width: 90vh;}
+.w-80vh { width: 80vh;}
+.w-70vh { width: 70vh;}
+.w-60vh { width: 60vh;}
+.w-50vh { width: 50vh;}
+.w-40vh { width: 40vh;}
+.w-30vh { width: 30vh;}
+.w-20vh { width: 20vh;}
+.w-10vh { width: 10vh;}
+.w-5vh { width: 5vh;}
+
+
+.full-height {
+  height: 100%;
+  height: 100vh;
+  @include breakpoint($phone_down) {
+    height: 450px;
+  }
+}
+
+.align-middle {
+  position: relative;
+  vertical-align: middle;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.content-center {
+  text-align: center;
+
+  .container-text, .content, .title {
+    text-align: center;
+  }
+}
+
+.bg-white{ background: white;}
+.bg-black{ background: black;}
+
+
+// Containers
+.container-max-width {
+  max-width: $contentMaxWidth;
+}
+.container-fluid-max-width {
+  max-width: $contentMaxWidth;
+  margin: 0 auto;
+
+  .container-fluid-max-width-half {
+    max-width: $contentMaxWidth/2;
+  }
+
+  @media (max-width: $contentMaxWidth+15) {
+    margin: 0 15px;
+  }
+}
+
+.container-text {
+  max-width: $textContentMaxWidth;
+  margin: 0 auto;
+}
+.container-text-small {
+  max-width: $textContentMaxWidth - 200;
+  margin: 0 auto;
+}
+
+
+
+//Colors
+.white-text{color: white;}
+.black-text{color: black;}
+
+
+//Titles.
+.title {
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+
+  &.thin {
+    font-weight: 300;
+  }
+
+  @at-root h1#{&}{
+    font-size: $fontSizeTitle*2;
+  }
+  @at-root h2#{&}{
+    font-size: $fontSizeTitle*1.4;
+  }
+  @at-root h3#{&}{
+    font-size: $fontSizeTitle;
+  }
+}
+
+
+// --------------------------      General structures
+
+// 1. Overlay
+.overlay {
+  background-position: center center;
+  background-size: cover;
+  &.overlay-absolute {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+// 2. Background Image style structure.
+.bg-wrapper{
+  position: relative;
+  .bg-element {
+    background-position: center center;
+    background-size: cover;
+    &.bg-element-full {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  .bg-wrapper-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// 3. Jump-to
+.jump-to-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  bottom: 0;
+
+  .jump-to {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+}
+
+// 4. Link list
+ul.link-list {
+  li {
+    display: inline-block;
+    margin: 0 20px;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,81 @@
+.footer-top-block {
+  padding: 40px 0;
+  text-align: center;
+
+  ul.social-list-wrapper.footer-social-wrapper {
+    margin-bottom: 20px;
+
+    li {
+      display: inline-block;
+      margin: 0 12px;
+      font-size: 26px;
+
+      a {
+        color: $color4th;
+        padding: 0 10px;
+      }
+    }
+
+    @include breakpoint($laptop_down) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    @include breakpoint($tablet_down) {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+    @include breakpoint($phone_down) {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    @include breakpoint($phone_small_down) {
+      margin-left:3px;
+      margin-right: 3px;
+    }
+  }
+
+  .phone-number {
+    color: $color4th;
+  }
+}
+
+
+.footer-bottom-block {
+  .footer-columns {
+
+    .footer-title {
+      font-size: 40px;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .columns-link-wrapper {
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+
+    @include breakpoint($tablet_down) {
+      .footer-title {
+        font-size: 30px;
+      }
+    }
+    @include breakpoint($phone_small_down) {
+      .footer-title {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+footer#colophon {
+  .site-info, .site-by {
+    display: inline-block;
+  }
+  @include breakpoint($phone_small_down) {
+    .site-info, .site-by {
+      display: block;
+    }
+  }
+}
