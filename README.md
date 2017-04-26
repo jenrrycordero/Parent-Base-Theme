@@ -1,5 +1,4 @@
-#General Instructions
-General documentation about the Base Parent Theme and how to use it and develop on top of it. Please check this guide for any question.
+#General Instructions about this Parent Theme and how to use it and develop on top of it. Please check this guide for any question.
 
 
 
